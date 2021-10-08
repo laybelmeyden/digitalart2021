@@ -22,22 +22,22 @@ const Navbar = (props) => {
                 <nav>
                     <div className={`grid__nav ${navToggle ? "show" : ""}`}>
                         <div className="item">
-                            <a href="">О проекте</a>
+                            <a href="#technologi">О проекте</a>
                         </div>
-                        <div className="item">
+                        {/* <div className="item">
                             <a href="">Новости</a>
-                        </div>
+                        </div> */}
                         <div className="item">
-                            <a href="">Эксперты</a>
+                            <a href="#teams">Эксперты</a>
                         </div>
-                        <div className="item">
+                        {/* <div className="item">
                             <a href="">Школы</a>
+                        </div> */}
+                        <div className="item">
+                            <a href="#partners">Партнеры</a>
                         </div>
                         <div className="item">
-                            <a href="">Партнеры</a>
-                        </div>
-                        <div className="item">
-                            <a href="">Контакты</a>
+                            <a href="#footer">Контакты</a>
                         </div>
                     </div>
                 </nav>

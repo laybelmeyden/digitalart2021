@@ -4,10 +4,12 @@
     padding: 0;
     box-sizing: border-box;
     outline: none;
+    scroll-behavior: smooth;
 }
 .body {
     background: #f3f7ff;
     font-family: Circe;
+    scroll-behavior: smooth;
 }
 .container {
     margin-right: auto;
@@ -712,12 +714,48 @@ footer {
     }
 }
 @media screen and (max-width: 992px) {
+    footer{
+        h5 {
+            font-style: normal;
+            font-size: 28px;
+            margin-bottom: 20px;
+        }
+        .social{
+            div{
+                margin-right: 0;
+                flex-direction: column;
+                img{
+                    margin-right: 0;
+                    margin-bottom: 10px;
+                }
+                a{
+                    font-size: 20px;
+                }
+            }
+        }
+    }
+    .sponsor p {
+        font-size: 14px;
+        line-height: 28px;
+    }
     #teams {
+        h4 {
+            font-size: 28px;
+        }
         .team__grid {
+            grid-template-rows: auto;
+            row-gap: 20px;
+            .title {
+                font-size: 20px;
+            }
+            .pretitle {
+                font-size: 18px;
+            }
             grid-template-columns: 1fr;
             .team__item {
                 text-align: center;
-                img{
+                img {
+                    max-width: 278px;
                     width: 100%;
                 }
             }
@@ -728,8 +766,48 @@ footer {
         position: relative;
         display: block;
     }
+    #about {
+        padding-top: 40px;
+        .about__text {
+            font-size: 20px;
+            max-width: 100%;
+            margin-bottom: 25px;
+        }
+        .about__norif {
+            font-size: 20px;
+            line-height: 28px;
+            margin-bottom: 0;
+            max-width: 100%;
+            a {
+                text-decoration: underline;
+                &::after {
+                    display: none;
+                }
+            }
+        }
+        .about__presents {
+            p {
+                text-decoration: underline;
+                font-size: 20px;
+                &::after {
+                    display: none;
+                }
+            }
+        }
+    }
+    #partners {
+        margin-top: 40px;
+    }
     #header {
+        padding-bottom: 0;
         .header__grid {
+            .first__item h1 {
+                font-size: 28px;
+                line-height: 46px;
+                color: #20262d;
+                margin-top: 25px;
+                margin-bottom: 30px;
+            }
             .second__item {
                 opacity: 0.4;
             }
@@ -738,6 +816,12 @@ footer {
     #technologi {
         .title__item {
             padding-left: 0;
+            h2 {
+                font-size: 28px;
+            }
+            p {
+                font-size: 20px;
+            }
         }
         .numbers__item {
             grid-template-columns: 1fr;
