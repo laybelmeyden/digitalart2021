@@ -3,7 +3,7 @@ import React, { useState } from "react";
 const Navbar = (props) => {
     const [navToggle, setnavToggle] = useState(false);
     const handleToggle = () => {
-        setnavToggle(!navToggle);
+        window.innerWidth >= 993 ? setnavToggle(false) : setnavToggle(!navToggle);
     };
     return (
         <div>
@@ -22,22 +22,22 @@ const Navbar = (props) => {
                 <nav>
                     <div className={`grid__nav ${navToggle ? "show" : ""}`}>
                         <div className="item">
-                            <a href="#technologi">О проекте</a>
+                            <a href="#technologi" onClick={()=>handleToggle(false)}>О проекте</a>
                         </div>
                         {/* <div className="item">
                             <a href="">Новости</a>
                         </div> */}
                         <div className="item">
-                            <a href="#teams">Эксперты</a>
+                            <a href="#teams" onClick={()=>handleToggle(false)}>Эксперты</a>
                         </div>
                         {/* <div className="item">
                             <a href="">Школы</a>
                         </div> */}
                         <div className="item">
-                            <a href="#partners">Партнеры</a>
+                            <a href="#partners" onClick={()=>handleToggle(false)}>Партнеры</a>
                         </div>
                         <div className="item">
-                            <a href="#footer">Контакты</a>
+                            <a href="#footer" onClick={()=>handleToggle(false)}>Контакты</a>
                         </div>
                     </div>
                 </nav>

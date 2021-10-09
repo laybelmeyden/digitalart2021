@@ -714,6 +714,9 @@ footer {
     }
 }
 @media screen and (max-width: 992px) {
+    .outnavbar{
+        padding: 0 !important;
+    }
     footer{
         h5 {
             font-style: normal;
