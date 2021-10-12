@@ -7,7 +7,7 @@ export default function Login() {
     const [password, setPassword] = useState('');
     const [redirect, setRedirect] = useState(false);
     const onFinish = async (e) => {   
-        const res = await fetch('http://'+window.document.location.host+'/api/login', {
+        const res = await fetch(window.document.location.protocol+'//'+window.document.location.host+'/api/login', {
             method: 'POST',
             headers: {'Content-Type': 'application/json'},
             credentials: 'include',

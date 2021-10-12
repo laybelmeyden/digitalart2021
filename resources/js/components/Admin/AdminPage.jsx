@@ -8,7 +8,7 @@ const AdminPage = (props) => {
     useEffect(() => {
         (async () => {
             const response = await fetch(
-                "http://" + window.document.location.host + "/api/user",
+                window.document.location.protocol+'//' + window.document.location.host + "/api/user",
                 {
                     headers: { "Content-Type": "application/json" },
                     credentials: "include",
@@ -22,7 +22,7 @@ const AdminPage = (props) => {
     });
     const logout = async () =>{
         const response = await fetch(
-            "http://" + window.document.location.host + "/api/logout",
+            window.document.location.protocol+'//' + window.document.location.host + "/api/logout",
             {
                 method:'POST',
                 headers: { "Content-Type": "application/json" },

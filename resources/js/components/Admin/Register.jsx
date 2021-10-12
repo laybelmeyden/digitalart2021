@@ -11,7 +11,7 @@ export default function Register() {
     const [redirect, setRedirect] = useState(false);
 
     const onFinish = async (e) => {   
-        const res = await fetch('http://'+window.document.location.host+'/api/register', {
+        const res = await fetch(window.document.location.protocol+'//'+window.document.location.host+'/api/register', {
             method: 'POST',
             headers: {'Content-Type': 'application/json'},
             body: JSON.stringify({
