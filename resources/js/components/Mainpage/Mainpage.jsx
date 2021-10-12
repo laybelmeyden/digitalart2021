@@ -6,8 +6,7 @@ import "swiper/css/navigation";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 import Slider from "react-slick";
-import { SampleNextArrow, SamplePrevArrow } from "./MainpageContainer";
-
+import { HashLink as LinkScroll } from "react-router-hash-link";
 
 const Mainpage = (props) => {
     return (
@@ -19,9 +18,9 @@ const Mainpage = (props) => {
                         <h1>
                             Окружные школы <br /> цифрового искусства
                         </h1>
-                        <a className="btn" href="">
+                        <LinkScroll className="btn" to="/#federal">
                             Участвовать
-                        </a>
+                        </LinkScroll>
                     </div>
                     <div className="second__item">
                         <img src="/assets/img/header.png" alt="header" />
@@ -78,8 +77,10 @@ const Mainpage = (props) => {
                 </p>
                 <p className="about__norif">
                     Чтобы принять участие в проекте необходимо перейти в раздел{" "}
-                    <a href="/">выбрать федеральный округ</a> ознакомиться с
-                    информацией и пройти регистрацию.
+                    <LinkScroll to="/#federal">
+                        выбрать федеральный округ
+                    </LinkScroll>{" "}
+                    ознакомиться с информацией и пройти регистрацию.
                 </p>
                 <a href="">
                     <div className="about__presents">
@@ -96,7 +97,7 @@ const Mainpage = (props) => {
                     </div>
                 </a>
             </section>
-            {/* <section id="news">
+            <section id="news">
                 <div className="container">
                     <h3>Новости проекта</h3>
                     <div className="swiper__block">
@@ -132,7 +133,7 @@ const Mainpage = (props) => {
                         </Swiper>
                     </div>
                 </div>
-            </section> */}
+            </section>
             <section id="teams" className="container">
                 <h4>Наша команда</h4>
                 <div className="team__grid">
@@ -193,7 +194,7 @@ const Mainpage = (props) => {
                     </div>
                 </div>
             </section>
-            {/* <section id="federal">
+            <section id="federal">
                 <div className="container">
                     <h5>Выбрать федеральный округ</h5>
                     <div className="federal__grid">
@@ -220,7 +221,7 @@ const Mainpage = (props) => {
                         </Slider>
                     </div>
                 </div>
-            </section> */}
+            </section>
             <section id="partners">
                 <div className="container">
                     <div className="partners__grid">

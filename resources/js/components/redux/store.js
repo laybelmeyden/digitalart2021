@@ -1,8 +1,11 @@
-import { createStore,combineReducers, applyMiddleware } from "redux";
+import { createStore,combineReducers } from "redux";
+import adminReducer from "./adminReducer.js";
 import mainpageReducer from "./mainpageReducer.js"
 
+
 const reducers = combineReducers({
-    mainpage:mainpageReducer
+    mainpage:mainpageReducer,
+    admin:adminReducer,
 })
 
 const store = createStore(reducers)
