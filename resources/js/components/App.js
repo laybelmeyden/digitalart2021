@@ -9,7 +9,8 @@ import store from "./redux/store";
 import AdminPageContainer from "./Admin/AdminPageContainer";
 import NotFound from "./NotFound/NotFound";
 import Login from "./Admin/Login";
-import Register from "./Admin/Register";
+import AddNews from "./News/Add";
+import EditNews from "./News/Edit";
 
 
 const App = (props) => {
@@ -21,7 +22,8 @@ const App = (props) => {
                 <Route exact path="/" render={() => <MainpageContainer />} />
                 <Route path="/admin" render={() => <AdminPageContainer />} />
                 <Route path="/login" render={() => <Login />} />
-                <Route path="/auth554321" render={() => <Register />} />
+                <Route path="/newsAdd" render={() => <AddNews />} />
+                <Route path="/newsEdit/:id" render={() => <EditNews />} />
                 <Route path="" component={NotFound} />
                 </Switch>
             </Provider>

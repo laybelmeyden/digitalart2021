@@ -97,7 +97,7 @@ const Mainpage = (props) => {
                     </div>
                 </a>
             </section>
-            <section id="news">
+            {/* <section id="news">
                 <div className="container">
                     <h3>Новости проекта</h3>
                     <div className="swiper__block">
@@ -133,7 +133,7 @@ const Mainpage = (props) => {
                         </Swiper>
                     </div>
                 </div>
-            </section>
+            </section> */}
             <section id="teams" className="container">
                 <h4>Наша команда</h4>
                 <div className="team__grid">
@@ -194,7 +194,7 @@ const Mainpage = (props) => {
                     </div>
                 </div>
             </section>
-            <section id="federal">
+            {/* <section id="federal">
                 <div className="container">
                     <h5>Выбрать федеральный округ</h5>
                     <div className="federal__grid">
@@ -221,7 +221,7 @@ const Mainpage = (props) => {
                         </Slider>
                     </div>
                 </div>
-            </section>
+            </section> */}
             <section id="partners">
                 <div className="container">
                     <div className="partners__grid">
