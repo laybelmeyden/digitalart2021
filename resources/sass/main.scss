@@ -189,7 +189,8 @@
         .ant-picker {
             width: 100%;
         }
-        .ant-btn, .ant-upload  {
+        .ant-btn,
+        .ant-upload {
             width: 100%;
         }
     }
@@ -687,6 +688,7 @@
     .federal__card {
         border-radius: 10px;
         padding: 60px;
+        height: 380px;
         .title {
             font-style: normal;
             font-weight: bold;
@@ -802,6 +804,104 @@ footer {
     }
 }
 ////footer_end////
+////times////
+.img__container__news{
+    margin-bottom: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    img{
+        width: fit-content;
+        max-width: 100%;
+    }
+}
+.times__relict {
+    margin-top: 100px;
+    padding-bottom: 100px;
+    h1 {
+        font-style: normal;
+        font-weight: 800;
+        font-size: 46px;
+        line-height: 46px;
+        color: #6b50b8;
+        margin-bottom: 20px;
+    }
+    p {
+        font-style: normal;
+        font-weight: normal;
+        font-size: 22px;
+        line-height: 28px;
+        color: #000000;
+        margin: 0;
+    }
+    .item{
+        color: #6b50b8;
+        padding-top: 20px;
+    }
+    .btn_item{
+        margin-top: 60px;
+            a {
+                width: 100%;
+                height: 60px;
+                background: #f9000c;
+                box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.25);
+                border-radius: 30px;
+                font-style: normal;
+                font-weight: normal;
+                font-size: 20px;
+                line-height: 29px;
+                color: #ffffff;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                &:hover {
+                    background: #6b50b8;
+                }
+        }
+    }
+    .about__presents {
+        margin-top: 40px;
+        display: flex;
+        align-items: center;
+        svg {
+            margin-right: 20px;
+            fill: #6b50b8;
+        }
+        p {
+            position: relative;
+            font-style: normal;
+            font-weight: normal;
+            font-size: 24px;
+            line-height: 28px;
+            letter-spacing: 0.2em;
+            color: #6b50b8;
+            margin-bottom: 0;
+            transition: color 0s !important;
+            text-transform: uppercase;
+            &::after {
+                content: "";
+                width: 100%;
+                height: 2px;
+                background: #6b50b8;
+                position: absolute;
+                left: 0;
+                bottom: 3px;
+            }
+        }
+        &:hover {
+            p {
+                color: #f9000c;
+            }
+            p::after {
+                background: #f9000c;
+            }
+            svg {
+                fill: #f9000c;
+            }
+        }
+    }
+}
+//timews__end////
 @media (min-width: 768px) {
     .container {
         width: 750px;
@@ -886,6 +986,13 @@ footer {
     }
 }
 @media screen and (max-width: 992px) {
+    .times__relict {
+        margin-top: 100px;
+        padding-bottom: 100px;
+        h1{
+            font-size: 30px;
+        }
+    }
     .outnavbar {
         padding: 0 !important;
     }

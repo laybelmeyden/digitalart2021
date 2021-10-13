@@ -35,14 +35,14 @@ const Navbar = (props) => {
                                 О проекте
                             </LinkScroll>
                         </div>
-                        {/* <div className="item">
+                        <div className="item">
                             <LinkScroll
                                 to="/#news"
                                 onClick={() => handleToggle(false)}
                             >
                                 Новости
                             </LinkScroll>
-                        </div> */}
+                        </div>
                         <div className="item">
                             <LinkScroll
                                 to="/#teams"
@@ -51,14 +51,14 @@ const Navbar = (props) => {
                                 Эксперты
                             </LinkScroll>
                         </div>
-                        {/* <div className="item">
+                        <div className="item">
                             <LinkScroll
                                 to="/#federal"
                                 onClick={() => handleToggle(false)}
                             >
                                 Школы
                             </LinkScroll>
-                        </div> */}
+                        </div>
                         <div className="item">
                             <LinkScroll
                                 to="/#partners"

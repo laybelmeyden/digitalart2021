@@ -11,7 +11,11 @@ import NotFound from "./NotFound/NotFound";
 import Login from "./Admin/Login";
 import AddNews from "./News/Add";
 import EditNews from "./News/Edit";
-
+import News1 from "./Times/News1"
+import News2 from "./Times/News2"
+import News3 from "./Times/News3"
+import Mero1 from "./Times/Mero1"
+import Mero2 from "./Times/Mero2"
 
 const App = (props) => {
     return (
@@ -24,6 +28,11 @@ const App = (props) => {
                 <Route path="/login" render={() => <Login />} />
                 <Route path="/newsAdd" render={() => <AddNews />} />
                 <Route path="/newsEdit/:id" render={() => <EditNews />} />
+                <Route path="/news1" render={() => <News1 />} />
+                <Route path="/news2" render={() => <News2 />} />
+                <Route path="/news3" render={() => <News3 />} />
+                <Route path="/mero1" render={() => <Mero1 />} />
+                <Route path="/mero2" render={() => <Mero2 />} />
                 <Route path="" component={NotFound} />
                 </Switch>
             </Provider>

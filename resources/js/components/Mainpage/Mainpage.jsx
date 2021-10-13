@@ -97,17 +97,17 @@ const Mainpage = (props) => {
                     </div>
                 </a>
             </section>
-            {/* <section id="news">
+            <section id="news">
                 <div className="container">
                     <h3>Новости проекта</h3>
                     <div className="swiper__block">
                         <Swiper slidesPerView="auto" spaceBetween={40}>
                             <SwiperSlide>
-                                <NavLink to="/dasd">
+                                <NavLink to="/news1">
                                     <div className="card__slider">
                                         <div className="img__block">
                                             <img
-                                                src="/assets/img/photo.png"
+                                                src="/assets/img/UzlITqaAjgA.jpg"
                                                 alt="photo"
                                             />
                                         </div>
@@ -130,10 +130,66 @@ const Mainpage = (props) => {
                                     </div>
                                 </NavLink>
                             </SwiperSlide>
+                            <SwiperSlide>
+                                <NavLink to="/news2">
+                                    <div className="card__slider">
+                                        <div className="img__block">
+                                            <img
+                                                src="/assets/img/7gHEeSz1cP0.jpg"
+                                                alt="photo"
+                                            />
+                                        </div>
+                                        <div className="text__block">
+                                            <p className="title">
+                                                Окружная школа "Технологии
+                                                прекрасного" стартует в Омске!
+                                            </p>
+                                            <p className="pretitle">
+                                                Хочешь научиться работать в
+                                                команде, генерировать креативные
+                                                идеи, воплощать их в цифровом
+                                                формате и использовать цифровые
+                                                технологии в проектах?
+                                            </p>
+                                            <p className="btn news__btn">
+                                                Читать
+                                            </p>
+                                        </div>
+                                    </div>
+                                </NavLink>
+                            </SwiperSlide>
+                            <SwiperSlide>
+                                <NavLink to="/news3">
+                                    <div className="card__slider">
+                                        <div className="img__block">
+                                            <img
+                                                src="/assets/img/b2ZHyavd-48.jpg"
+                                                alt="photo"
+                                            />
+                                        </div>
+                                        <div className="text__block">
+                                            <p className="title">
+                                                Окружная школа "Технологии
+                                                прекрасного" стартует в Майкопе!
+                                            </p>
+                                            <p className="pretitle">
+                                                Проект направлен на активную
+                                                творческую молодежь, которая
+                                                стремиться создавать собственные
+                                                проекты в сфере цифрового
+                                                искусства
+                                            </p>
+                                            <p className="btn news__btn">
+                                                Читать
+                                            </p>
+                                        </div>
+                                    </div>
+                                </NavLink>
+                            </SwiperSlide>
                         </Swiper>
                     </div>
                 </div>
-            </section> */}
+            </section>
             <section id="teams" className="container">
                 <h4>Наша команда</h4>
                 <div className="team__grid">
@@ -194,20 +250,20 @@ const Mainpage = (props) => {
                     </div>
                 </div>
             </section>
-            {/* <section id="federal">
+            <section id="federal">
                 <div className="container">
                     <h5>Выбрать федеральный округ</h5>
                     <div className="federal__grid">
                         <Slider {...props.settings}>
                             <div>
-                                <a href="">
+                                <NavLink to="/mero1">
                                     <div className="federal__card green">
                                         <p className="title">
-                                            СИБИРСКИЙ ФЕДЕРАЛЬНЫЙ ОКРУГ
+                                            СИБИРСКИЙ ФЕДЕРАЛЬНЫЙ ОКРУ
                                         </p>
                                         <p className="adress">
-                                            г. Омск, ул. Конферен-Холл (Точка
-                                            кипения) Жукова, 21
+                                            г. Омск, «Точка Кипения» АСИ на ул.
+                                            Жукова 2
                                         </p>
                                         <p className="date">
                                             15-17 октября в 10.00
@@ -216,12 +272,33 @@ const Mainpage = (props) => {
                                             Подробнее
                                         </p>
                                     </div>
-                                </a>
+                                </NavLink>
+                            </div>
+                            <div>
+                                <NavLink to="/mero2">
+                                    <div className="federal__card fiol">
+                                        <p className="title">
+                                            ЮДЖНЫЙ ФЕДЕРАЛЬНЫЙ ОКРУГ
+                                        </p>
+                                        <p className="adress">
+                                            г. Майкоп, Майкопский
+                                            государственный технологический
+                                            университет, ул. Первомайская, д.
+                                            191
+                                        </p>
+                                        <p className="date">
+                                            22-24 октября в 10.00
+                                        </p>
+                                        <p className="btn btn__federal">
+                                            Подробнее
+                                        </p>
+                                    </div>
+                                </NavLink>
                             </div>
                         </Slider>
                     </div>
                 </div>
-            </section> */}
+            </section>
             <section id="partners">
                 <div className="container">
                     <div className="partners__grid">
