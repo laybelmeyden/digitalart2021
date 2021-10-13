@@ -259,7 +259,7 @@ const Mainpage = (props) => {
                                 <NavLink to="/mero1">
                                     <div className="federal__card green">
                                         <p className="title">
-                                            СИБИРСКИЙ ФЕДЕРАЛЬНЫЙ ОКРУ
+                                            СИБИРСКИЙ ФЕДЕРАЛЬНЫЙ ОКРУГ
                                         </p>
                                         <p className="adress">
                                             г. Омск, «Точка Кипения» АСИ на ул.
@@ -278,7 +278,7 @@ const Mainpage = (props) => {
                                 <NavLink to="/mero2">
                                     <div className="federal__card fiol">
                                         <p className="title">
-                                            ЮДЖНЫЙ ФЕДЕРАЛЬНЫЙ ОКРУГ
+                                            ЮЖНЫЙ ФЕДЕРАЛЬНЫЙ ОКРУГ
                                         </p>
                                         <p className="adress">
                                             г. Майкоп, Майкопский
