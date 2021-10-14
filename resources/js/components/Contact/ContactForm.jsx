@@ -56,6 +56,7 @@ const ContactForm = (props) => {
                                 type="text"
                                 name="name"
                                 placeholder="Ваше ФИО"
+                                required
                             />
                         </div>
                         <div>
@@ -63,6 +64,7 @@ const ContactForm = (props) => {
                                 type="email"
                                 name="email"
                                 placeholder="Ваша почта"
+                                required
                             />
                         </div>
                     </div>
