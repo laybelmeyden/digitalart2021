@@ -7,6 +7,7 @@ import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 import Slider from "react-slick";
 import { HashLink as LinkScroll } from "react-router-hash-link";
+import ContactForm from "../Contact/ContactForm";
 
 const Mainpage = (props) => {
     return (
@@ -209,14 +210,14 @@ const Mainpage = (props) => {
                         </p>
                     </div>
                     <div className="team__item">
-                        <img src="/assets/img/ph1.png" alt="ser" />
+                        <img src="/assets/img/kotel.png" alt="ser" />
                         <p className="title">Евгения Котельникова</p>
                         <p className="pretitle">
                             куратор ЦФО и СКФО по проекту
                         </p>
                     </div>
                     <div className="team__item">
-                        <img src="/assets/img/ph2.png" alt="ser" />
+                        <img src="/assets/img/rez.png" alt="ser" />
                         <p className="title">Андрей Резников</p>
                         <p className="pretitle">куратор СФО и УФО по проекту</p>
                     </div>
@@ -235,7 +236,7 @@ const Mainpage = (props) => {
                         </p>
                     </div>
                     <div className="team__item">
-                        <img src="/assets/img/ph3.png" alt="fani" />
+                        <img src="/assets/img/vetr.png" alt="fani" />
                         <p className="title">Дмитрий Ветров</p>
                         <p className="pretitle">
                             Сoddy преподаватель python, c/c++, эксперт
@@ -316,18 +317,23 @@ const Mainpage = (props) => {
             <footer id="footer">
                 <div className="container">
                     <h5>По вопросам участия в проекте:</h5>
-                    <div className="social">
-                        <div>
-                            <img src="/assets/img/phone.svg" alt="phone" />
-                            <a href="tel:8 (499) 753 01 25">
-                                8 (499) 753 01 25
-                            </a>
+                    <div className="footer__item">
+                        <div className="social">
+                            <div>
+                                <img src="/assets/img/phone.svg" alt="phone" />
+                                <a href="tel:8 (499) 753 01 25">
+                                    8 (499) 753 01 25
+                                </a>
+                            </div>
+                            <div>
+                                <img src="/assets/img/mail.svg" alt="mail" />
+                                <a href="mailto:info@rusinnovations.com">
+                                    info@rusinnovations.com
+                                </a>
+                            </div>
                         </div>
-                        <div>
-                            <img src="/assets/img/mail.svg" alt="mail" />
-                            <a href="mailto:info@rusinnovations.com">
-                                info@rusinnovations.com
-                            </a>
+                        <div className="form__container">
+                            <ContactForm />
                         </div>
                     </div>
                 </div>
