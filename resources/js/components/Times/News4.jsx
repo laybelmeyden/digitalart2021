@@ -2,7 +2,7 @@ const News2 = (props) => {
     return (
         <div className="container times__relict">
             <div className="img__container__news">
-                <img src="/assets/img/b2ZHyavd-48.jpg" alt="" />
+                <img src="/assets/img/xcPg6Zyw09kYr4qRPxrHR.jpg" alt="" />
             </div>
             <h1>Школа цифрового искусства стартовала в Омске</h1>
             <p>

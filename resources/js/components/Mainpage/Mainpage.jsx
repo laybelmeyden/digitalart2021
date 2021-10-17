@@ -108,7 +108,7 @@ const Mainpage = (props) => {
                                     <div className="card__slider">
                                         <div className="img__block">
                                             <img
-                                                src="/assets/img/xcPg6Zyw09kYr4qRPxrHR.jpg.pagespeed.ic.39n1dwHSW0.jpg"
+                                                src="/assets/img/xcPg6Zyw09kYr4qRPxrHR.jpg"
                                                 alt="photo"
                                             />
                                         </div>
