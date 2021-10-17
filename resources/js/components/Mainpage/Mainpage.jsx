@@ -104,25 +104,52 @@ const Mainpage = (props) => {
                     <div className="swiper__block">
                         <Swiper slidesPerView="auto" spaceBetween={40}>
                             <SwiperSlide>
-                                <NavLink to="/news1">
+                                <NavLink to="/news4">
                                     <div className="card__slider">
                                         <div className="img__block">
                                             <img
-                                                src="/assets/img/UzlITqaAjgA.jpg"
+                                                src="/assets/img/xcPg6Zyw09kYr4qRPxrHR.jpg.pagespeed.ic.39n1dwHSW0.jpg"
                                                 alt="photo"
                                             />
                                         </div>
                                         <div className="text__block">
                                             <p className="title">
-                                                Окружные школы цифрового
-                                                искусства стартуют в 8
-                                                федеральных округах!
+                                                Школа цифрового искусства
+                                                стартовала в Омске
                                             </p>
                                             <p className="pretitle">
-                                                Друзья, хотим поделиться с вами
-                                                своей радостью - мы победили в
-                                                первом конкурсе Президентского
-                                                фонда культурных инициатив!
+                                                Первое окружное мероприятие
+                                                проекта «Окружные школы
+                                                цифрового искусства «Технологии
+                                                прекрасного»
+                                            </p>
+                                            <p className="btn news__btn">
+                                                Читать
+                                            </p>
+                                        </div>
+                                    </div>
+                                </NavLink>
+                            </SwiperSlide>
+                            <SwiperSlide>
+                                <NavLink to="/news3">
+                                    <div className="card__slider">
+                                        <div className="img__block">
+                                            <img
+                                                src="/assets/img/b2ZHyavd-48.jpg"
+                                                alt="photo"
+                                            />
+                                        </div>
+                                        <div className="text__block">
+                                            <p className="title">
+                                                Окружная школа "Технологии
+                                                прекрасного" стартует в Майкопе!
+                                            </p>
+                                            <p className="pretitle">
+                                                Проект направлен на активную
+                                                творческую молодежь, которая
+                                                стремиться создавать собственные
+                                                проекты в сфере цифрового
+                                                искусства
                                             </p>
                                             <p className="btn news__btn">
                                                 Читать
@@ -160,25 +187,25 @@ const Mainpage = (props) => {
                                 </NavLink>
                             </SwiperSlide>
                             <SwiperSlide>
-                                <NavLink to="/news3">
+                                <NavLink to="/news1">
                                     <div className="card__slider">
                                         <div className="img__block">
                                             <img
-                                                src="/assets/img/b2ZHyavd-48.jpg"
+                                                src="/assets/img/UzlITqaAjgA.jpg"
                                                 alt="photo"
                                             />
                                         </div>
                                         <div className="text__block">
                                             <p className="title">
-                                                Окружная школа "Технологии
-                                                прекрасного" стартует в Майкопе!
+                                                Окружные школы цифрового
+                                                искусства стартуют в 8
+                                                федеральных округах!
                                             </p>
                                             <p className="pretitle">
-                                                Проект направлен на активную
-                                                творческую молодежь, которая
-                                                стремиться создавать собственные
-                                                проекты в сфере цифрового
-                                                искусства
+                                                Друзья, хотим поделиться с вами
+                                                своей радостью - мы победили в
+                                                первом конкурсе Президентского
+                                                фонда культурных инициатив!
                                             </p>
                                             <p className="btn news__btn">
                                                 Читать
