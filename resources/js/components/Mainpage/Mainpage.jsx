@@ -202,7 +202,6 @@ const Mainpage = (props) => {
                     </div>
                 </div>
             </section>
-            {console.log(props)}
             <section id="federal">
                 <div className="container">
                     <h5>Выбрать федеральный округ</h5>
