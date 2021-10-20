@@ -1,6 +1,7 @@
-import React from "react";
+import React, { useState } from "react";
 import { connect } from "react-redux";
 import Mainpage from "./Mainpage";
+import { NewsAPI, EventAPI } from "../api";
 
 export const SampleNextArrow = (props) => {
     const { onClick, className } = props;
@@ -14,11 +15,7 @@ export const SampleNextArrow = (props) => {
                     viewBox="0 0 36 36"
                     fill="none"
                 >
-                    <circle
-                        r="18"
-                        transform="matrix(-1 0 0 1 18 18)"
-                        fill=""
-                    />
+                    <circle r="18" transform="matrix(-1 0 0 1 18 18)" fill="" />
                     <g>
                         <path
                             d="M26.7938 17.5023C26.7936 17.5021 26.7934 17.5018 26.7931 17.5016L23.1192 13.8454C22.8439 13.5715 22.3988 13.5725 22.1248 13.8478C21.8508 14.123 21.8519 14.5682 22.1271 14.8421L24.5938 17.2969H9.70312C9.31479 17.2969 9 17.6117 9 18C9 18.3883 9.31479 18.7031 9.70312 18.7031H24.5938L22.1272 21.1579C21.8519 21.4318 21.8509 21.877 22.1248 22.1522C22.3988 22.4275 22.844 22.4285 23.1192 22.1546L26.7932 18.4984C26.7934 18.4982 26.7936 18.4979 26.7938 18.4977C27.0692 18.2228 27.0683 17.7762 26.7938 17.5023Z"
@@ -73,11 +70,32 @@ const MainpageContainer = () => {
             },
         ],
     };
-    return <Mainpage 
-    settings={settings}/>;
+    const [news, setNews] = useState([]);
+    const [event, setEvent] = useState([]);
+    const fetchPostNews = () => {
+        NewsAPI.getAllNews().then((res) => {
+            const result = res.data;
+            setNews(result.data);
+        });
+    };
+    const fetchPostEvent = () => {
+        EventAPI.getAllEvent().then((res) => {
+            const result = res.data;
+            setEvent(result.data);
+        });
+    };
+    return (
+        <Mainpage
+            settings={settings}
+            fetchPostNews={fetchPostNews}
+            fetchPostEvent={fetchPostEvent}
+            news={news}
+            event={event}
+        />
+    );
 };
 const mapStateToProps = (state) => {
-    return {}
+    return {};
 };
 
 export default connect(mapStateToProps, {})(MainpageContainer);

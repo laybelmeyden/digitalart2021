@@ -1,68 +1,115 @@
-import React from "react";
-import { Input, DatePicker, Upload, message, Button } from "antd";
-import { UploadOutlined } from "@ant-design/icons";
-const { TextArea } = Input;
-import locale from "antd/es/date-picker/locale/ru_RU";
+import React, { useEffect, useState } from "react";
+import { Link, useHistory, useParams } from "react-router-dom";
+import { NewsAPI } from "../api";
 
 const Edit = () => {
-    function onChange(date, dateString) {
-        console.log(date, dateString);
-    }
-    const onChangeTextArea = (e) => {
-        console.log("Change:", e.target.value);
+    const history = useHistory();
+    const [loading, setLoading] = useState(false);
+    const [title, setTitle] = useState("");
+    const [body, setBody] = useState("");
+    const { id } = useParams();
+    
+    const onSubmit = () => {
+        setLoading(true);
+        try {
+            NewsAPI.updateNews(
+                {
+                    title,
+                    body,
+                },
+                id
+            );
+            history.push("/admin");
+        } catch (error) {
+            alert("OYOYOOYOY");
+        } finally {
+            setLoading(false);
+        }
     };
-    const propsUpload = {
-        name: "file",
-        action: "https://www.mocky.io/v2/5cc8019d300000980a055e76",
-        headers: {
-            authorization: "authorization-text",
-        },
-        onChange(info) {
-            if (info.file.status !== "uploading") {
-                console.log(info.file, info.fileList);
-            }
-            if (info.file.status === "done") {
-                message.success(`${info.file.name} file uploaded successfully`);
-            } else if (info.file.status === "error") {
-                message.error(`${info.file.name} file upload failed.`);
-            }
-        },
-    };
+    useEffect(() => {
+        NewsAPI.getOneNews(id).then((res) => {
+            const result = res.data;
+            const news = result.data;
+            setTitle(news.title);
+            setBody(news.body);
+        });
+    }, []);
     return (
         <div className="container">
-            <h1>Редактировать новость</h1>
+            <h1 className="h1__news__con">Изменить новость</h1>
+            <Link to="/admin">Назад</Link>
             <form action="">
                 <div className="editors__inputs">
-                    <div className="item">
-                        <Upload {...propsUpload}>
-                            <Button icon={<UploadOutlined />}>
-                                Click to Upload
-                            </Button>
-                        </Upload>
-                        ,
+                    <div className="mb-3">
+                        <label
+                            htmlFor="exampleFormControlInput1"
+                            className="form-label"
+                        >
+                            Заголовок
+                        </label>
+                        <input
+                            type="text"
+                            className="form-control"
+                            id="exampleFormControlInput1"
+                            name="title"
+                            placeholder="Заголовок"
+                            value={title}
+                            onChange={(e) => setTitle(e.target.value)}
+                        />
                     </div>
-                    <div className="item">
-                        <Input placeholder="Заголовок" />
+                    <div className="mb-3">
+                        <label
+                            htmlFor="exampleFormControlTextarea1"
+                            className="form-label"
+                        >
+                            Описание
+                        </label>
+                        <textarea
+                            className="form-control"
+                            id="exampleFormControlTextarea1"
+                            name="body"
+                            value={body}
+                            onChange={(e) => setBody(e.target.value)}
+                        ></textarea>
                     </div>
-                    <div className="item">
-                        <TextArea
-                            showCount
-                            maxLength={100}
-                            onChange={onChangeTextArea}
+                    <div className="mb-3">
+                        <label htmlFor="formFile" className="form-label">
+                            Изображение
+                        </label>
+                        <input
+                            className="form-control"
+                            type="file"
+                            id="formFile"
+                            name="image"
+                        />
+                    </div>
+                    <div className="mb-3">
+                        <label
+                            htmlFor="exampleFormControlInput1"
+                            className="form-label"
+                        >
+                            Сео
+                        </label>
+                        <input
+                            type="text"
+                            className="form-control"
+                            id="exampleFormControlInput1"
+                            placeholder="Сео"
+                            name="seo_title"
                         />
                     </div>
                     <div className="item">
-                        <DatePicker onChange={onChange} locale={locale} />
-                    </div>
-                    <div className="item">
-                        <Input placeholder="Заголовок СЕО" />
-                    </div>
-                    <div className="item">
-                        <button type="submit">Отправить</button>
+                        <button
+                            type="submit"
+                            disabled={loading}
+                            onClick={onSubmit}
+                        >
+                            {loading ? "loading..." : "Отправить"}
+                        </button>
                     </div>
                 </div>
             </form>
         </div>
     );
-}
+};
 export default Edit;

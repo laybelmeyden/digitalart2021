@@ -11,12 +11,10 @@ import NotFound from "./NotFound/NotFound";
 import Login from "./Admin/Login";
 import AddNews from "./News/Add";
 import EditNews from "./News/Edit";
-import News1 from "./Times/News1"
-import News2 from "./Times/News2"
-import News3 from "./Times/News3"
-import News4 from "./Times/News4"
-import Mero1 from "./Times/Mero1"
-import Mero2 from "./Times/Mero2"
+import NewsItem from "./News/NewsItem";
+import AddEvent from "./Citys/Add";
+import EditEvent from "./Citys/Edit";
+import NewsEvent from "./Citys/EventItem";
 
 const App = (props) => {
     return (
@@ -29,12 +27,10 @@ const App = (props) => {
                 <Route path="/login" render={() => <Login />} />
                 <Route path="/newsAdd" render={() => <AddNews />} />
                 <Route path="/newsEdit/:id" render={() => <EditNews />} />
-                <Route path="/news1" render={() => <News1 />} />
-                <Route path="/news2" render={() => <News2 />} />
-                <Route path="/news3" render={() => <News3 />} />
-                <Route path="/news4" render={() => <News4 />} />
-                <Route path="/mero1" render={() => <Mero1 />} />
-                <Route path="/mero2" render={() => <Mero2 />} />
+                <Route path="/news/:id" render={() => <NewsItem />} />
+                <Route path="/eventAdd" render={() => <AddEvent />} />
+                <Route path="/eventEdit/:id" render={() => <EditEvent />} />
+                <Route path="/event/:id" render={() => <NewsEvent />} />
                 <Route path="" component={NotFound} />
                 </Switch>
             </Provider>

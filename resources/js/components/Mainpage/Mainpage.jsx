@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import { Swiper, SwiperSlide } from "swiper/react";
 import "swiper/css";
 import { NavLink } from "react-router-dom";
@@ -9,7 +9,17 @@ import Slider from "react-slick";
 import { HashLink as LinkScroll } from "react-router-hash-link";
 import ContactForm from "../Contact/ContactForm";
 
+
+
+
 const Mainpage = (props) => {
+        useEffect(() => {
+            props.fetchPostNews();
+        }, []);
+        useEffect(() => {
+            props.fetchPostEvent();
+        }, []);
+
     return (
         <div>
             <section id="header" className="container">
@@ -103,25 +113,22 @@ const Mainpage = (props) => {
                     <h3>Новости проекта</h3>
                     <div className="swiper__block">
                         <Swiper slidesPerView="auto" spaceBetween={40}>
-                            <SwiperSlide>
-                                <NavLink to="/news4">
+                            {props.news.map(e =>(
+                                <SwiperSlide key={e.id}>
+                                <NavLink to={`/news/${e.id}`}>
                                     <div className="card__slider">
                                         <div className="img__block">
                                             <img
-                                                src="/assets/img/xcPg6Zyw09kYr4qRPxrHR.jpg"
+                                                src={`storage/news/${e.image}`}
                                                 alt="photo"
                                             />
                                         </div>
                                         <div className="text__block">
                                             <p className="title">
-                                                Школа цифрового искусства
-                                                стартовала в Омске
+                                                {e.title.slice(0,60)}
                                             </p>
                                             <p className="pretitle">
-                                                Первое окружное мероприятие
-                                                проекта «Окружные школы
-                                                цифрового искусства «Технологии
-                                                прекрасного»
+                                                {e.body.slice(0,123) + '...'}
                                             </p>
                                             <p className="btn news__btn">
                                                 Читать
@@ -130,90 +137,7 @@ const Mainpage = (props) => {
                                     </div>
                                 </NavLink>
                             </SwiperSlide>
-                            <SwiperSlide>
-                                <NavLink to="/news3">
-                                    <div className="card__slider">
-                                        <div className="img__block">
-                                            <img
-                                                src="/assets/img/b2ZHyavd-48.jpg"
-                                                alt="photo"
-                                            />
-                                        </div>
-                                        <div className="text__block">
-                                            <p className="title">
-                                                Окружная школа "Технологии
-                                                прекрасного" стартует в Майкопе!
-                                            </p>
-                                            <p className="pretitle">
-                                                Проект направлен на активную
-                                                творческую молодежь, которая
-                                                стремиться создавать собственные
-                                                проекты в сфере цифрового
-                                                искусства
-                                            </p>
-                                            <p className="btn news__btn">
-                                                Читать
-                                            </p>
-                                        </div>
-                                    </div>
-                                </NavLink>
-                            </SwiperSlide>
-                            <SwiperSlide>
-                                <NavLink to="/news2">
-                                    <div className="card__slider">
-                                        <div className="img__block">
-                                            <img
-                                                src="/assets/img/7gHEeSz1cP0.jpg"
-                                                alt="photo"
-                                            />
-                                        </div>
-                                        <div className="text__block">
-                                            <p className="title">
-                                                Окружная школа "Технологии
-                                                прекрасного" стартует в Омске!
-                                            </p>
-                                            <p className="pretitle">
-                                                Хочешь научиться работать в
-                                                команде, генерировать креативные
-                                                идеи, воплощать их в цифровом
-                                                формате и использовать цифровые
-                                                технологии в проектах?
-                                            </p>
-                                            <p className="btn news__btn">
-                                                Читать
-                                            </p>
-                                        </div>
-                                    </div>
-                                </NavLink>
-                            </SwiperSlide>
-                            <SwiperSlide>
-                                <NavLink to="/news1">
-                                    <div className="card__slider">
-                                        <div className="img__block">
-                                            <img
-                                                src="/assets/img/UzlITqaAjgA.jpg"
-                                                alt="photo"
-                                            />
-                                        </div>
-                                        <div className="text__block">
-                                            <p className="title">
-                                                Окружные школы цифрового
-                                                искусства стартуют в 8
-                                                федеральных округах!
-                                            </p>
-                                            <p className="pretitle">
-                                                Друзья, хотим поделиться с вами
-                                                своей радостью - мы победили в
-                                                первом конкурсе Президентского
-                                                фонда культурных инициатив!
-                                            </p>
-                                            <p className="btn news__btn">
-                                                Читать
-                                            </p>
-                                        </div>
-                                    </div>
-                                </NavLink>
-                            </SwiperSlide>
+                            ))}
                         </Swiper>
                     </div>
                 </div>
@@ -278,23 +202,24 @@ const Mainpage = (props) => {
                     </div>
                 </div>
             </section>
+            {console.log(props)}
             <section id="federal">
                 <div className="container">
                     <h5>Выбрать федеральный округ</h5>
                     <div className="federal__grid">
                         <Slider {...props.settings}>
-                            <div>
-                                <NavLink to="/mero1">
-                                    <div className="federal__card green">
+                            {props.event.map(e => (
+                                <div key="e.id">
+                                <NavLink to={`/event/${e.id}`}>
+                                    <div className={`federal__card ${e.color}`}>
                                         <p className="title">
-                                            СИБИРСКИЙ ФЕДЕРАЛЬНЫЙ ОКРУГ
+                                            {e.title}
                                         </p>
                                         <p className="adress">
-                                            г. Омск, «Точка Кипения» АСИ на ул.
-                                            Жукова 2
+                                            {e.city}
                                         </p>
                                         <p className="date">
-                                            15-17 октября в 10.00
+                                            {`${e.date} ${e.time}`}
                                         </p>
                                         <p className="btn btn__federal">
                                             Подробнее
@@ -302,27 +227,7 @@ const Mainpage = (props) => {
                                     </div>
                                 </NavLink>
                             </div>
-                            <div>
-                                <NavLink to="/mero2">
-                                    <div className="federal__card fiol">
-                                        <p className="title">
-                                            ЮЖНЫЙ ФЕДЕРАЛЬНЫЙ ОКРУГ
-                                        </p>
-                                        <p className="adress">
-                                            г. Майкоп, Майкопский
-                                            государственный технологический
-                                            университет, ул. Первомайская, д.
-                                            191
-                                        </p>
-                                        <p className="date">
-                                            22-24 октября в 10.00
-                                        </p>
-                                        <p className="btn btn__federal">
-                                            Подробнее
-                                        </p>
-                                    </div>
-                                </NavLink>
-                            </div>
+                            ))}
                         </Slider>
                     </div>
                 </div>
@@ -334,6 +239,14 @@ const Mainpage = (props) => {
                             <a href="">
                                 <img
                                     src="/assets/img/part1.png"
+                                    alt="part1.png"
+                                />
+                            </a>
+                        </div>
+                        <div className="item">
+                            <a href="">
+                                <img
+                                    src="/assets/img/prav2.png"
                                     alt="part1.png"
                                 />
                             </a>

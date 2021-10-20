@@ -2,12 +2,26 @@ import { useState, useEffect } from "react";
 import { Redirect } from "react-router";
 import { Link, NavLink } from "react-router-dom";
 import MainNews from "../News/NewsContainer";
-import MainCitys from "../Citys/Main";
+import MainEvent from "../Citys/EventContainer";
 
 const AdminPage = (props) => {
     const [name, setName] = useState("");
     const [email, setEmail] = useState("");
     const [redirect, setRedirect] = useState(false);
+    const logout = async () => {
+        const response = await fetch(
+            window.document.location.protocol +
+            "//" +
+            window.document.location.host +
+            "/api/logout",
+            {
+                method: "POST",
+                headers: { "Content-Type": "application/json" },
+                credentials: "include",
+            }
+            );
+        setRedirect(true);
+    };
     useEffect(() => {
         (async () => {
             const response = await fetch(
@@ -16,10 +30,13 @@ const AdminPage = (props) => {
                     window.document.location.host +
                     "/api/user",
                 {
-                    headers: { "Content-Type": "application/json" },
+                    headers: {
+                        "Content-Type": "application/json",
+                        Accept: "application/json",
+                    },
                     credentials: "include",
                 }
-            );
+            )
             const content = await response.json();
 
             setName(content.name);
@@ -38,20 +55,20 @@ const AdminPage = (props) => {
                         </div>
                         <MainNews />
                     </div>
-                    {/* <div>
+                    <div>
                         <div className="news">
-                            <h1>Округа</h1>
-                            <NavLink to="citysAdd">Добавить</NavLink>
+                            <h1>Школы</h1>
+                            <NavLink to="eventAdd">Добавить</NavLink>
                         </div>
-                        <MainCitys />
-                    </div> */}
-                    <div className="btn btn__logout" onClick={props.logout}>
+                        <MainEvent />
+                    </div>
+                    <div className="btn btn__logout" onClick={logout}>
                         Выход
                     </div>
                 </div>
             ) : (
                 <div className="non__auth">
-                    <p>Вы не авторизованны</p>
+                    <p>Вы не авторизованы</p>
                     <Link to="login">Вход</Link>
                 </div>
             )}
