@@ -1,3 +1,4 @@
+import axios from "axios";
 import React, { useEffect, useState } from "react";
 import { Link, useHistory, useParams } from "react-router-dom";
 import { NewsAPI } from "../api";
@@ -7,17 +8,20 @@ const Edit = () => {
     const [loading, setLoading] = useState(false);
     const [title, setTitle] = useState("");
     const [body, setBody] = useState("");
+    const [image, setImage] = useState("");
     const { id } = useParams();
     
+    const formData = new FormData();
+    formData.append("image", image);
+    formData.append("title", title);
+    formData.append("body", body);
+
+
     const onSubmit = () => {
         setLoading(true);
         try {
-            NewsAPI.updateNews(
-                {
-                    title,
-                    body,
-                },
-                id
+            NewsAPI.updateNewsFile(
+               formData, id
             );
             history.push("/admin");
         } catch (error) {
@@ -81,6 +85,7 @@ const Edit = () => {
                             type="file"
                             id="formFile"
                             name="image"
+                            onChange={(e) => setImage(e.target.files[0])}
                         />
                     </div>
                     <div className="mb-3">

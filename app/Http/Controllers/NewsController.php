@@ -68,6 +68,36 @@ class NewsController extends Controller
         $news = News::findOrFail($id);
         $news->title = $request->title;
         $news->body = $request->body;
+        if($request -> hasFile('image')){
+            $file = $request->file('image');
+            $filename = $file->getClientOriginalName();
+            $finalName = date('His') . $filename;
+            $request->file('image')->storeAs('news/', $finalName, 'public');
+            $news -> image = $finalName;
+        }
+        $news->save();
+
+        return response()->json([
+            'data' => 'post updated'
+        ]);
+    }
+    public function updateNews(Request $request, $id)
+    {
+        // $request->validate([
+        //     'title' => 'required',
+        //     'body' => 'required',
+        // ]);
+
+        $news = News::findOrFail($id);
+        $news->title = $request->title;
+        $news->body = $request->body;
+        if($request -> hasFile('image')){
+            $file = $request->file('image');
+            $filename = $file->getClientOriginalName();
+            $finalName = date('His') . $filename;
+            $request->file('image')->storeAs('news/', $finalName, 'public');
+            $news -> image = $finalName;
+        }
         $news->save();
 
         return response()->json([

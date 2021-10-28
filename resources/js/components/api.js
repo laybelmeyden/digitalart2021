@@ -20,6 +20,9 @@ export const NewsAPI = {
     updateNews: (news, id) => {
        return axios.put(`${BASE_API_URL}/news/${id}`, news)
     },
+    updateNewsFile: (formData, id) => {
+       return axios.post(`${BASE_API_URL}/updateNews/${id}`, formData)
+    },
     deletedNews: (id) => {
        return axios.delete(`${BASE_API_URL}/news/${id}`)
     },

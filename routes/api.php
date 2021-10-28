@@ -31,3 +31,5 @@ Route::middleware('auth:sanctum')->group(function(){
 
 Route::resource('news', NewsController::class);
 Route::resource('events', EventController::class);
+
+Route::post('updateNews/{id}', [\App\Http\Controllers\NewsController::class, 'updateNews'])->name('updateNews');

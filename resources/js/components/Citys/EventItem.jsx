@@ -32,9 +32,7 @@ const EventItem = (props) => {
     return (
         <div className="container times__relict">
             <h1>{title}</h1>
-            <p>
-                {body}
-            </p>
+            <p dangerouslySetInnerHTML={{ __html: body }}></p>
             <p className="item">
             место проведения: {city}
             </p>

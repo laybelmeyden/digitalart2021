@@ -9,16 +9,13 @@ import Slider from "react-slick";
 import { HashLink as LinkScroll } from "react-router-hash-link";
 import ContactForm from "../Contact/ContactForm";
 
-
-
-
 const Mainpage = (props) => {
-        useEffect(() => {
-            props.fetchPostNews();
-        }, []);
-        useEffect(() => {
-            props.fetchPostEvent();
-        }, []);
+    useEffect(() => {
+        props.fetchPostNews();
+    }, []);
+    useEffect(() => {
+        props.fetchPostEvent();
+    }, []);
 
     return (
         <div>
@@ -113,30 +110,31 @@ const Mainpage = (props) => {
                     <h3>Новости проекта</h3>
                     <div className="swiper__block">
                         <Swiper slidesPerView="auto" spaceBetween={40}>
-                            {props.news.map(e =>(
+                            {props.news.map((e) => (
                                 <SwiperSlide key={e.id}>
-                                <NavLink to={`/news/${e.id}`}>
-                                    <div className="card__slider">
-                                        <div className="img__block">
-                                            <img
-                                                src={`storage/news/${e.image}`}
-                                                alt="photo"
-                                            />
+                                    <NavLink to={`/news/${e.id}`}>
+                                        <div className="card__slider">
+                                            <div className="img__block">
+                                                <img
+                                                    src={`storage/news/${e.image}`}
+                                                    alt="photo"
+                                                />
+                                            </div>
+                                            <div className="text__block">
+                                                <p className="title">
+                                                    {e.title.slice(0, 60)}
+                                                </p>
+                                                <p className="pretitle">
+                                                    {e.body.slice(0, 123) +
+                                                        "..."}
+                                                </p>
+                                                <p className="btn news__btn">
+                                                    Читать
+                                                </p>
+                                            </div>
                                         </div>
-                                        <div className="text__block">
-                                            <p className="title">
-                                                {e.title.slice(0,60)}
-                                            </p>
-                                            <p className="pretitle">
-                                                {e.body.slice(0,123) + '...'}
-                                            </p>
-                                            <p className="btn news__btn">
-                                                Читать
-                                            </p>
-                                        </div>
-                                    </div>
-                                </NavLink>
-                            </SwiperSlide>
+                                    </NavLink>
+                                </SwiperSlide>
                             ))}
                         </Swiper>
                     </div>
@@ -207,25 +205,23 @@ const Mainpage = (props) => {
                     <h5>Выбрать федеральный округ</h5>
                     <div className="federal__grid">
                         <Slider {...props.settings}>
-                            {props.event.map(e => (
+                            {props.event.map((e) => (
                                 <div key="e.id">
-                                <NavLink to={`/event/${e.id}`}>
-                                    <div className={`federal__card ${e.color}`}>
-                                        <p className="title">
-                                            {e.title}
-                                        </p>
-                                        <p className="adress">
-                                            {e.city}
-                                        </p>
-                                        <p className="date">
-                                            {`${e.date} ${e.time}`}
-                                        </p>
-                                        <p className="btn btn__federal">
-                                            Подробнее
-                                        </p>
-                                    </div>
-                                </NavLink>
-                            </div>
+                                    <NavLink to={`/event/${e.id}`}>
+                                        <div
+                                            className={`federal__card ${e.color}`}
+                                        >
+                                            <p className="title">{e.title}</p>
+                                            <p className="adress">{e.city}</p>
+                                            <p className="date">
+                                                {`${e.date} ${e.time}`}
+                                            </p>
+                                            <p className="btn btn__federal">
+                                                Подробнее
+                                            </p>
+                                        </div>
+                                    </NavLink>
+                                </div>
                             ))}
                         </Slider>
                     </div>
@@ -235,7 +231,7 @@ const Mainpage = (props) => {
                 <div className="container">
                     <div className="partners__grid">
                         <div className="item">
-                            <a href="">
+                            <a href="https://xn--80aeeqaabljrdbg6a3ahhcl4ay9hsa.xn--p1ai/">
                                 <img
                                     src="/assets/img/part1.png"
                                     alt="part1.png"
@@ -243,9 +239,17 @@ const Mainpage = (props) => {
                             </a>
                         </div>
                         <div className="item">
-                            <a href="">
+                            <a href="https://youth.gov-murman.ru/">
                                 <img
                                     src="/assets/img/prav2.png"
+                                    alt="part1.png"
+                                />
+                            </a>
+                        </div>
+                        <div className="item">
+                            <a href="https://www.murmancongress.ru/">
+                                <img
+                                    src="/assets/img/part3.png"
                                     alt="part1.png"
                                 />
                             </a>
@@ -280,9 +284,11 @@ const Mainpage = (props) => {
             <div className="sponsor">
                 <div className="container">
                     <p>
-                        Проект реализуется за счет средств Гранта,
-                        предоставленного{" "}
-                        <a href="">Президентским фондом культурных инициатив</a>
+                        Проект реализуется Агентством инновационного развития за
+                        счет средств Гранта, предоставленного{" "}
+                        <a href="https://xn--80aeeqaabljrdbg6a3ahhcl4ay9hsa.xn--p1ai/">
+                            Президентским фондом культурных инициатив
+                        </a>
                         .
                     </p>
                 </div>
