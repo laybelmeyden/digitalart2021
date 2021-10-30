@@ -75,6 +75,14 @@ const Navbar = (props) => {
                                 Контакты
                             </LinkScroll>
                         </div>
+                        <div className="item">
+                            <LinkScroll
+                                to="/photo"
+                                onClick={() => handleToggle(false)}
+                            >
+                                Галерея
+                            </LinkScroll>
+                        </div>
                     </div>
                 </nav>
             </div>

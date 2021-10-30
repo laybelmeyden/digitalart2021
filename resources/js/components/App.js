@@ -15,6 +15,9 @@ import NewsItem from "./News/NewsItem";
 import AddEvent from "./Citys/Add";
 import EditEvent from "./Citys/Edit";
 import NewsEvent from "./Citys/EventItem";
+import Photo from "./Photos/Photo";
+import PhotoItem from "./Photos/PhotoItem"
+
 
 const App = (props) => {
     return (
@@ -31,6 +34,7 @@ const App = (props) => {
                 <Route path="/eventAdd" render={() => <AddEvent />} />
                 <Route path="/eventEdit/:id" render={() => <EditEvent />} />
                 <Route path="/event/:id" render={() => <NewsEvent />} />
+                <Route path="/photo" render={() => <Photo />} />
                 <Route path="" component={NotFound} />
                 </Switch>
             </Provider>

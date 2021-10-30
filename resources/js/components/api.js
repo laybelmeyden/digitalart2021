@@ -44,4 +44,9 @@ export const EventAPI = {
        return axios.delete(`${BASE_API_URL}/events/${id}`)
     },
 };
+export const PhotoAPI = {
+    getAllPhoto: () => {
+       return axios.get(`${BASE_API_URL}/gallsviews`)
+    }
+};
 
