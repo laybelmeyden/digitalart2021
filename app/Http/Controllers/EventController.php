@@ -56,7 +56,29 @@ class EventController extends Controller
     {
         return new EventResource(Event::findOrFail($id));
     }
+    public function updateEvents(Request $request, $id)
+    {
+        // $request->validate([
+        //     'title' => 'required',
+        //     'body' => 'required',
+        // ]);
 
+        $event = Event::findOrFail($id);
+        $event->title = $request->title;
+        $event->body = $request->body;
+        if($request -> hasFile('programm')){
+            $file = $request->file('programm');
+            $filename = $file->getClientOriginalName();
+            $finalName = date('His') . $filename;
+            $request->file('programm')->storeAs('event/', $finalName, 'public');
+            $event -> programm = $finalName;
+        }
+        $event->save();
+
+        return response()->json([
+            'data' => 'post updated'
+        ]);
+    }
     /**
      * Update the specified resource in storage.
      *

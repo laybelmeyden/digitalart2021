@@ -43,6 +43,9 @@ export const EventAPI = {
     deletedEvent: (id) => {
        return axios.delete(`${BASE_API_URL}/events/${id}`)
     },
+    updateEventsFile: (formData, id) => {
+      return axios.post(`${BASE_API_URL}/updateEvents/${id}`, formData)
+   },
 };
 export const PhotoAPI = {
     getAllPhoto: () => {

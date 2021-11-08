@@ -15,22 +15,27 @@ const Edit = () => {
     const [href_event, setHref_event] = useState("");
     const { id } = useParams();
 
-    // const formData = new FormData(); 
-    // formData.append("programm",programm);
+    const formData = new FormData();
+    formData.append("programm", programm);
+    formData.append("title", title);
+    formData.append("body", body);
+    formData.append("date", date);
+    formData.append("time", time);
+    formData.append("color", color);
+    formData.append("href_event", href_event);
 
-    const handleChange = (e) => {
-        setProgramm(e[0]);
-    };
+    // const handleChange = (e) => {
+    //     setProgramm(e[0]);
+    // };
     const onSubmit = (e) => {
         setLoading(true);
         try {
-            EventAPI.updateEvent(
-                {title, body, date, time, color, href_event, city},
-                id
-                );
+            EventAPI.updateEventsFile(
+               formData, id
+            );
             history.push("/admin");
         } catch (error) {
-            alert("errors");
+            alert("OYOYOOYOY");
         } finally {
             setLoading(false);
         }
@@ -181,9 +186,7 @@ const Edit = () => {
                             className="form-control"
                             type="file"
                             name="programm"
-                            onChange={(e) => {
-                                handleChange(e.target.files);
-                            }}
+                            onChange={(e) => setProgramm(e.target.files[0])}
                         />
                     </div>
                     <div className="item">
