@@ -198,6 +198,13 @@ const Mainpage = (props) => {
                             консультант по клиентоориентированности, эксперт
                         </p>
                     </div>
+                    <div className="team__item">
+                        <img src="/assets/img/guliyaeva.png" alt="guliyaeva.png" />
+                        <p className="title">Гуляева Алёна</p>
+                        <p className="pretitle">
+                        Аспирант Института высшей нервной деятельности и нейрофизиологии РАН. Заместитель генерального директора Arteo.tech
+                        </p>
+                    </div>
                 </div>
             </section>
             <section id="federal">
@@ -250,6 +257,14 @@ const Mainpage = (props) => {
                             <a href="https://www.murmancongress.ru/">
                                 <img
                                     src="/assets/img/part3.png"
+                                    alt="part1.png"
+                                />
+                            </a>
+                        </div>
+                        <div className="item">
+                            <a href="https://mkgtu.ru/">
+                                <img
+                                    src="/assets/img/logomgty.png"
                                     alt="part1.png"
                                 />
                             </a>
