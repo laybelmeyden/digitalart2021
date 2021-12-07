@@ -280,6 +280,38 @@ const Mainpage = (props) => {
                                 />
                             </a>
                         </div>
+                        <div className="item">
+                            <a href="https://mtm.permkrai.ru/">
+                                <img
+                                    src="/assets/img/photo_2021-11-17_11-43-49.jpg"
+                                    alt="part1.png"
+                                />
+                            </a>
+                        </div>
+                        <div className="item">
+                            <a href="https://www.amursu.ru/">
+                                <img
+                                    src="/assets/img/WhatsApp_Image_2021-11-23_at_17_59_00.jpg"
+                                    alt="part1.png"
+                                />
+                            </a>
+                        </div>
+                        <div className="item">
+                            <a href="https://unpress.perm.media/">
+                                <img
+                                    src="/assets/img/Yunpress_LOGO_Cherny_1.png"
+                                    alt="part1.png"
+                                />
+                            </a>
+                        </div>
+                        <div className="item">
+                            <a href="https://www.vega28.ru/">
+                                <img
+                                    src="/assets/img/logotip_-_gorizontalny_s_deskripterom_1.png"
+                                    alt="part1.png"
+                                />
+                            </a>
+                        </div>
                     </div>
                 </div>
             </section>
